@@ -1,0 +1,16 @@
+allure-behave==2.8.24
+allure-python-commons==2.8.24
+attrs==20.3.0
+behave==1.2.6
+certifi==2020.12.5
+chardet==4.0.0
+idna==2.10
+importlib-metadata==2.1.1
+json2html==1.3.0
+parse==1.18.0
+parse-type==0.5.2
+pluggy==0.13.1
+requests==2.25.1
+six==1.15.0
+urllib3==1.26.2
+zipp==1.2.0
