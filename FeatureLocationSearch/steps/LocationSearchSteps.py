@@ -56,7 +56,7 @@ def step_impl(context,location):
         "https://www.metaweather.com/api/location/search/?query="+location)
 
 
-@then("API returns all the locations with titles partially matching with the partial {location} text")
+@then("API returns all the locations with titles partially matching with the partial text {location}")
 def step_impl(context, location):
     # Verify the Response code is 200
     assert global_variables['get_response'].status_code == 200

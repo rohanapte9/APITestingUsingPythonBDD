@@ -25,7 +25,7 @@ Feature:
    woeid	       | integer		         |  Where On Earth ID
    distance	       | integer 	             |  Only returned on a lattlong search (in meters)
 
-
+  @sanity_Test
   Scenario Outline: When User Searches with a city name, details for that particular city are presented.
     Given User Searches for a location
     When  <location> is passed to the API end point for location search
@@ -36,13 +36,18 @@ Feature:
     | Berlin    |  city         | 638242   | 52.516071,13.376980 |
     | Mumbai    |  city         | 12586539 | 19.076191,72.875877 |
 
-
-  Scenario: When User Passed Partial city name, the API returns all the locations with partially matching names.
+  @regression_test
+  Scenario Outline: When User Passed Partial city name, the API returns all the locations with partially matching names.
     Given User Searches for a location
     When Partial text text is passed for the <location>
-    Then API returns all the locations with titles partially matching with the partial <location> text
+    Then API returns all the locations with titles partially matching with the partial text <location>
+    Examples:
+    | location  |
+    | san       |
+    | shire     |
+    | pur       |
 
-
+  @sanity_test
   Scenario Outline: When User searches with Latitude and Longitudes, the API responds with all the near by locations.
     Given User has Latitude and Longitude information
     When User calls the API with Latitude and Longitude details <latt_long>

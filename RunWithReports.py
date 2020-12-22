@@ -21,8 +21,11 @@ if __name__ == '__main__':
     featureFilePath = 'FeatureLocationSearch'
     #
     # tag option (currently not using any tag)
-    tagOptions = ' --tags=-tag_me '
     tagOptions = ''
+    # To run Only Regression Tests
+    # tagOptions = ' --tags=regression_test '
+    # To exclude only Regression Tests
+    # tagOptions = ' --tags=-regression_test '
     #
     # command line argument to capture console output
     commonRunnerOptions = ' --no-capture --no-capture-stderr -f plain '
